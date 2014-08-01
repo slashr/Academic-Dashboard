@@ -1,0 +1,47 @@
+<html>
+<head>
+<script>
+function showTotalBorrowed()
+{
+var xmlhttp;
+  
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("total").innerHTML=xmlhttp.responseText;
+	val=xmlhttp.responseText;
+	value = parseInt(val);
+	value = value/5000*100;
+	var val = value.toPrecision(2);
+	document.getElementById("stats").innerHTML=val+"% books in circulation" ;
+    }
+  }
+  
+xmlhttp.open("GET","PHP/getTotalBorrowed.php",true);
+xmlhttp.send();
+
+}
+</script>
+<script>
+setInterval(function(){showTotalBorrowed()},5000);
+</script>
+<link rel="stylesheet" type="text/css" href="Stylesheets/totalborrowed.css">
+</head>
+<body bgcolor="#1FAEFF" onload = "showTotalBorrowed()">
+<br>
+<div id="title"><center>Total Borrowed</center><br></div>
+<div id="total"> <b>Calculating</b></div>
+<div id="icon"><img src="Stylesheets/cc/black/export_icon&48.png"/></div>	
+<div id="stats">Presenting Statistics...</div>
+
+</body>
+</html>

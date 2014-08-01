@@ -1,0 +1,46 @@
+<html>
+<head>
+<script>
+function sendRequest()
+{
+
+var name = document.getElementById('name').value;
+var isbn = document.getElementById('isbn').value;
+var xmlhttp;
+  
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("total").innerHTML=xmlhttp.responseText;
+    }
+  }
+  
+xmlhttp.open("GET","PHP/sendRequest.php?name="+name+"&isbn="+isbn,true);
+xmlhttp.send();
+
+}
+
+</script>
+
+<link rel="stylesheet" type="text/css" href="Stylesheets/requests.css">
+</head>
+<body bgcolor="#1FAEFF">
+<br>
+<center>Request</center><br>
+<input type = "text" placeholder="Enter Book Name" class="inputs" id=name>
+<input type = "text" required placeholder="Enter the ISBN Code" class="inputs" id=isbn><br>
+<input type = "submit" onclick="sendRequest()">
+
+<div id="total"> <b></b></div> 
+
+</body>
+</html>

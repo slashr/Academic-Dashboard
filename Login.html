@@ -1,0 +1,25 @@
+<html>
+<head>
+<script>
+function authenticate()
+{
+
+	var username=document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+	if(username=="root" && password=="root")
+	window.open("Requests.html", "_self");
+	else
+	document.write("Invalid User");
+}
+</script>
+<link rel="stylesheet" type="text/css" href="Stylesheets/login.css">
+</head>
+<body bgcolor="#1FAEFF">
+<br>
+<center>Login to place a request</center><br>
+Username <input type="text" id="username" placeholder="Roll Number" class="inputs">
+Password <input type="password" id="password" class="inputs"></br>
+<input type="button" id="login"  value="Login" onclick="authenticate()"><br>
+
+</body>
+</html>

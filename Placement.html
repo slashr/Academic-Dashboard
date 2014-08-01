@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script type="text/javascript" src="Resources/charts.js"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+		var x = 11;
+	  var data = google.visualization.arrayToDataTable([
+          ['Organization', 'Percentage of students placed'],
+          ['Amazon',     x],
+          ['Microsoft',      33],
+          ['Google',  47],
+          ['Yahoo', 22],
+          ['Other',    7]
+        ]);
+
+        var options = {
+          title: 'Placement Stats for 2013',
+          is3D: true,
+		  backgroundColor: "#339933",
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+	<link rel="stylesheet" type="text/css" href="Stylesheets/placement.css">
+  </head>
+  <body bgcolor="339933">
+    <div id="piechart_3d" style="width: 480px; height: 240px;"></div>
+  </body>
+</html>

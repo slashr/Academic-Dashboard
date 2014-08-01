@@ -1,0 +1,21 @@
+body
+{
+	font-family: Verdana;
+	text-align: center;
+	overflow:hidden;
+}
+
+
+#upcoming
+{
+-webkit-marquee: auto medium infinite scroll normal;   
+overflow-x: -webkit-marquee;  
+}
+
+
+#upcoming:hover 
+{
+-webkit-marquee: auto medium infinite scroll normal;   
+overflow-x: -webkit-marquee;  
+}
+

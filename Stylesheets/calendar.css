@@ -1,0 +1,82 @@
+body
+{
+	overflow:hidden;
+}
+
+/* Styling for the title (Month and Year) of the calendar */
+div.title {
+    font: x-large Verdana, Arial, Helvetica, sans-serif;
+    text-align: center;
+    height: 40px;
+    background-color:#AA40FF;
+    color: black;
+    }
+
+/* Styling for the overall table */
+table {
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    table-layout: fixed;
+    width: 100%;
+	border-spacing: 0;
+	border-width:0;
+    }
+/* Styling for the column headers (days of the week) */
+th {
+    padding: 0 0.5em;
+    text-align: center;
+    background-color:#AA40FF;
+    color:white;
+	border-width:0;
+	
+    }
+/* Styling for the individual cells (days) */
+td  {     
+    font-size: medium;
+    padding: 0.25em 0.25em;   
+    width: 14%; 
+    height: 40px;
+    text-align: center;
+    vertical-align: top;
+	-moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;	
+	border-width:0;
+    }
+	
+	th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+}
+
+th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+	
+td:hover
+{
+  background: #fbf8e9;
+  -o-transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+/* Styling for the date numbers */
+.date  {     
+    font-size: large;
+    padding: 0.25em 0.25em;   
+    text-align: left;
+    vertical-align: top;
+    }
+/* Class for individual days (coming in future release) */
+.sun {
+     color:red;
+     }
+/* Hide the month element (coming in future release) */
+th.month {
+    visibility: hidden;
+    display:none;
+    }
